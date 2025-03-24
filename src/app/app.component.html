@@ -1,5 +1,12 @@
 <div style="text-align:center;">
   <h1>{{ title }}</h1>
-  <!-- Property Binding for Logo and Event Binding for Click -->
+  
+  <!-- Logo with Click Event to Open the Website in New Tab -->
   <img [src]="logoUrl" alt="BridgeLabz Logo" (click)="openWebsite()" style="cursor:pointer;" />
+  
+  <!-- Input field with two-way data binding for the user's name -->
+  <input type="text" [(ngModel)]="userName" placeholder="Enter your name" />
+  
+  <!-- Display greeting message when user enters their name -->
+  <p *ngIf="userName">Hello {{ userName }} from BridgeLabz!</p>
 </div>
