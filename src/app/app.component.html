@@ -1,5 +1,5 @@
 <div style="text-align:center;">
   <h1>{{ title }}</h1>
-  <!-- Property Binding for Logo -->
-  <img [src]="logoUrl" alt="BridgeLabz Logo" />
+  <!-- Property Binding for Logo and Event Binding for Click -->
+  <img [src]="logoUrl" alt="BridgeLabz Logo" (click)="openWebsite()" style="cursor:pointer;" />
 </div>
