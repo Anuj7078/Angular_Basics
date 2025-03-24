@@ -5,8 +5,15 @@
   <img [src]="logoUrl" alt="BridgeLabz Logo" (click)="openWebsite()" style="cursor:pointer;" />
   
   <!-- Input field with two-way data binding for the user's name -->
-  <input type="text" [(ngModel)]="userName" placeholder="Enter your name" />
+  <input 
+    type="text" 
+    [(ngModel)]="userName" 
+    (ngModelChange)="validateName()" 
+    placeholder="Enter your name" />
+  
+  <!-- Display error message if validation fails -->
+  <p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
   
   <!-- Display greeting message when user enters their name -->
-  <p *ngIf="userName">Hello {{ userName }} from BridgeLabz!</p>
+  <p *ngIf="!errorMessage && userName">Hello {{ userName }} from BridgeLabz!</p>
 </div>
